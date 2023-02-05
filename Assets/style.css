@@ -1,0 +1,26 @@
+:root {
+    /* CSS HEX */
+    --lemon-meringue: #f1e8b8ff;
+    --yellow-crayola: #f9e784ff;
+    --copper-crayola: #e58f65ff;
+    --indian-red: #d05353ff;
+    --eerie-black: #191919ff;
+}
+
+* {
+    align-content: center;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--lemon-meringue);
+}
+
+.card {
+    background-color: var(--yellow-crayola);
+}
+
+.card-body {
+    align-content: center;
+    box-shadow: 3px 2px 0px 0px var(--copper-crayola);
+}
