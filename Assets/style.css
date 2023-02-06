@@ -12,15 +12,29 @@
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: var(--lemon-meringue);
+    padding-left: 50px;
+    padding-right: 50px
 }
 
+button {
+    box-shadow: inset 0px 3px 8px var(--copper-crayola), 0 0 15px var(--eerie-black);
+
+}
 .card {
     background-color: var(--yellow-crayola);
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .card-body {
     align-content: center;
-    box-shadow: 3px 2px 0px 0px var(--copper-crayola);
+}
+
+.startBtn {
+    max-width: 100px;
+    background-color: var(--yellow-crayola);
+    align-content: center;
+    text-align: center;
 }
