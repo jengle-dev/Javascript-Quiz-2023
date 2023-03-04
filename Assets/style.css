@@ -24,10 +24,10 @@ div.absolute {
     top: 80px;
 }
 
-#mainLoad {
-    display: block;
+/* Class */
+.visible {
+  visibility: visible !important;
 }
-
-#questionCard {
-    display: none;
+.invisible {
+  visibility: hidden !important;
 }

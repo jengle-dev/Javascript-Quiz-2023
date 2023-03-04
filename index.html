@@ -18,17 +18,29 @@
   <!-- header -->
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-      <span class="navbar-brand mb-0"><h3>JavaScript Quiz</h3></span>
+      <span class="navbar-brand mb-0"><h2>JavaScript Quiz</h2></span>
     </div>
   </nav>
 <!-- main load view -->
-<div id="mainLoad" class="container-fluid col-md-6 offset-md-3">
-  <p><h5>This is a quiz to test your knowledge of JavaScript.</h5></p>
+<div id="mainLoad" class="container-fluid col-md-6 offset-md-3 visible">
+  <p><h4>This is a quiz to test your knowledge of JavaScript.</h4></p>
+  <p>The quiz will have 10 multiple choice questions. Select the answer by clicking the corresponding button. </p>
+  <ul>
+    <li>The quiz is timed and the countdown begins with 12 minutes.</li>
+    <li>Once you've clicked a button, the answer will be locked in.</li>
+    <li>The next Question will appear.</li>
+    <li>If the answer selected is wrong, 20 seconds will be deducted from the total time.</li>
+    <li>The quiz is over when all 10 questions are answered or the timer has countdown to 0.</li>
+    
+  </ul>
+  <h5>Click the Start Button to view the first question & start the timer.</h5>
+  <p><h6>Good Luck!</h6></p>
+
   <button type="button" id = "startBtn" class="btn btn-success">Start</button>
 </div>
 
   <!-- card for questions -->
-  <div id="questionCard" class="container-fluid col-md-6 offset-md-3 absolute hide">
+  <div id="questionCard" class="container-fluid col-md-6 offset-md-3 absolute invisible">
     <div class="card">
       <h5 class="card-header">progress bar?</h5>
       <div class="card-body">
