@@ -7,49 +7,27 @@
     --eerie-black: #191919ff;
 }
 
-* {
-    align-content: center;
-}
-
 body {
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: var(--lemon-meringue);
-    padding-left: 50px;
-    padding-right: 50px
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
-button {
-    box-shadow: 0px 3px 8px var(--copper-crayola), 0 0 15px var(--eerie-black);
-}
 
-.hide {
-    display:none;
-}
-
-.container {
-    align-content: center;
-    text-align: center;
-}
-
-.btn {
-    max-width: fit-content;
-    margin: 10px 10px 10px 10px;
-}
-
+/* nothing below this line is working */
 .card {
-    background-color: var(--yellow-crayola);
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
-.card-body {
-    align-content: center;
+div.absolute {
+    position: absolute;
+    top: 80px;
 }
 
-.startBtn {
-    background-color: var(--yellow-crayola);
-    align-content: center;
-    text-align: center;
-    margin: 100px 100px 100px 100px;
-    padding: 0 0;
+#mainLoad {
+    display: block;
+}
+
+#questionCard {
+    display: none;
 }
