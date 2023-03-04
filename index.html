@@ -35,24 +35,24 @@
   </p>
 </div>
 <div class="startBtn">
-  <button id="startBtn" class="btn">Start</button>
+  <button id="startButton" class="btn startTimer">Start</button>
 </div>
   <!-- Timer -->
-<div class="timer">
-  <h5>Timer Countdown: <span>timer</span></h5>
+<div id="timerDisplay" class="timer hide">
+  <p><h5>Timer Countdown: </h5><h6><span id="timerCountdown">15:00</span></h6>
 </div>
   <!-- Questions Box -->
-  <div class="container" id="questionContainer">
+  <div class="container hide" id="questionContainer">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title question">Question <span id="questionNumber">1</span> of 10</h5>
         <!-- <h6 class="card-subtitle mb-2 text-muted">What is the question?</h6> -->
         <p class="card-text">What is the questions?</p>
         <!-- can these 2 links be turned into buttons and store the answer? -->
-        <button><a href="#" class="card-link">Option 1</a></button>
-        <button><a href="#" class="card-link">Option 2</a></button>
-        <button><a href="#" class="card-link">Option 3</a></button>
-        <button><a href="#" class="card-link">Option 4</a></button>
+        <button id="answer-A" class="btn">Option A</button>
+        <button id="answer-B" class="btn">Option B</button>
+        <button id="answer-C" class="btn">Option C</button>
+        <button id="answer-D" class="btn">Option D</button>
       </div>
     </div>
   </div>
@@ -62,6 +62,8 @@
     <p class="footer-text"><span>&copy</span> 2022-2023 by Jennifer Engle</p>
   </div>
   <!-- script CDN -->
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <!-- Day.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js" integrity="sha512-hcV6DX35BKgiTiWYrJgPbu3FxS6CsCjKgmrsPRpUPkXWbvPiKxvSVSdhWX0yXcPctOI2FJ4WP6N1zH+17B/sAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- Bootstrap Framework -->
@@ -69,6 +71,7 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
   <script src="assets/script.js"></script>
+  <script src="assets/questions.js"></script>
 </body>
 
 </html>
