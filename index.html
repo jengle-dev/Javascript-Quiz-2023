@@ -18,51 +18,59 @@
   <!-- header -->
   <nav class="navbar bg-body-tertiary">
     <div class="container-fluid">
-      <span class="navbar-brand mb-0"><h2>JavaScript Quiz</h2></span>
+      <span class="navbar-brand mb-0">
+        <h2>JavaScript Quiz</h2>
+      </span>
     </div>
   </nav>
-<!-- main load view -->
-<div id="mainLoad" class="container-fluid col-md-6 offset-md-3 visible">
-  <p><h4>This is a quiz to test your knowledge of JavaScript.</h4></p>
-  <p>The quiz will have 10 multiple choice questions. Select the answer by clicking the corresponding button. </p>
-  <ul>
-    <li>The quiz is timed and the countdown begins with 12 minutes.</li>
-    <li>Once you've clicked a button, the answer will be locked in.</li>
-    <li>The next Question will appear.</li>
-    <li>If the answer selected is wrong, 20 seconds will be deducted from the total time.</li>
-    <li>The quiz is over when all 10 questions are answered or the timer has countdown to 0.</li>
-    
-  </ul>
-  <h5>Click the Start Button to view the first question & start the timer.</h5>
-  <p><h6>Good Luck!</h6></p>
+  <!-- main load view -->
+  <div id="mainLoad" class="container-fluid col-md-6 offset-md-3 visible">
+    <p>
+    <h4>This is a quiz to test your knowledge of JavaScript.</h4>
+    </p>
+    <p>The quiz will have 10 multiple choice questions. Select the answer by clicking the corresponding button. </p>
+    <ul>
+      <li>The quiz is timed and the countdown begins with 12 minutes.</li>
+      <li>Once you've clicked a button, the answer will be locked in.</li>
+      <li>The next Question will appear.</li>
+      <li>If the answer selected is wrong, 20 seconds will be deducted from the total time.</li>
+      <li>The quiz is over when all 10 questions are answered or the timer has countdown to 0.</li>
 
-  <button type="button" id = "startBtn" class="btn btn-success">Start</button>
-</div>
+    </ul>
+    <h5>Click the Start Button to view the first question & start the timer.</h5>
+    <p>
+    <h6>Good Luck!</h6>
+    </p>
+
+    <button type="button" id="startBtn" class="btn btn-success">Start</button>
+  </div>
 
   <!-- card for questions -->
   <div id="questionCard" class="container-fluid col-md-6 offset-md-3 absolute invisible">
     <div class="card">
       <h5 class="card-header">progress bar?</h5>
+      <!-- possible progress bar -->
+      <!-- <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar" style="width: 10%">Question 1 of 10</div>
+      </div> -->
       <div class="card-body">
         <h4 class="card-title">Question 1</h4>
-        <p class="card-text">Question Text</p>
-        <button type="button" class="btn btn-success">Success</button>
-        <button type="button" class="btn btn-success">Success</button>
-        <button type="button" class="btn btn-success">Success</button>
-        <button type="button" class="btn btn-success">Success</button>
+        <p id="questionText" class="card-text">Question Text</p>
+        <div id="answerBtns">
+          <button type="button" id="btnOne" class="btn btn-success">Success</button>
+          <button type="button" id="btnTwo" class="btn btn-success">Success</button>
+          <button type="button" id="btnThree" class="btn btn-success">Success</button>
+          <button type="button" id="btnFour" class="btn btn-success">Success</button>
+        </div>
       </div>
     </div>
   </div>
-  <!-- possible progress bar -->
-  <!-- <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-  <div class="progress-bar" style="width: 10%">Question 1 of 10</div>
-</div> -->
+
   <!-- start button -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
   <script src="assets/script.js"></script>
-  <script src="assets/questions.js"></script>
 </body>
 
 </html>

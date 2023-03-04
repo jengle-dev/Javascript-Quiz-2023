@@ -12,22 +12,18 @@ body {
     font-size: 16px;
 }
 
-
-/* nothing below this line is working */
-.card {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-div.absolute {
-    position: absolute;
-    top: 80px;
-}
-
 /* Class */
 .visible {
-  visibility: visible !important;
-}
-.invisible {
-  visibility: hidden !important;
-}
+    visibility: visible !important;
+  }
+  .invisible {
+    visibility: hidden !important;
+  }
+
+/* nothing below this line is working */
+/* .card {
+    padding-top: 50px;
+    padding-bottom: 50px;
+} */
+
+
