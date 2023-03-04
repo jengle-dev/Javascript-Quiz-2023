@@ -17,10 +17,8 @@ quizStart = addEventListener("click", startQuiz);
 function startQuiz() {
     console.log("Quiz started.")
 
-    mainPage.classList.remove('visible');
-    mainPage.classList.add('invisible');
-    quizCard.classList.remove('invisible');
-    quizCard.classList.add('visible');
+    mainPage.classList.add('hide');
+    quizCard.classList.remove('hide');
 
     setNextQuestion();
 }
@@ -31,7 +29,9 @@ setNextQuestion = () => {
     displayQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
+resetState = () => {
 
+}
 // when answer chosen, the next question appears
 
 

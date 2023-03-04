@@ -13,12 +13,9 @@ body {
 }
 
 /* Class */
-.visible {
-    visibility: visible !important;
-  }
-  .invisible {
-    visibility: hidden !important;
-  }
+.hide {
+  display: none;
+}
 
 /* nothing below this line is working */
 /* .card {
