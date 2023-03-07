@@ -10,20 +10,31 @@ let shuffledQuestions, currentQuestionIndex;
 
 
 // start button - add event listener
-quizStart = addEventListener("click", startQuiz);
-// at click of start button - timer begins
-
-// directions hide and question card displays
+quizStart = addEventListener("click", // directions hide and question card displays
 function startQuiz() {
+    
     console.log("Quiz started.")
 
     mainPage.classList.add('hide');
     quizCard.classList.remove('hide');
 
     setNextQuestion();
-}
-// load question
+});
 
+
+// at click of start button - timer begins
+// countdown function from Algorithms Folder in Module 4
+var countdown = function(num) {
+    for (var i = num; i > 0; i--) {
+      console.log(i);
+    }
+  };
+  
+  
+
+
+
+// load question
 setNextQuestion = () => {
     resetState();
     displayQuestion(shuffledQuestions[currentQuestionIndex]);
