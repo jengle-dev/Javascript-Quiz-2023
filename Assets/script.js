@@ -2,12 +2,12 @@
 var mainPage = document.getElementById("mainLoad");
 var quizStart = document.getElementById("startBtn");
 var quizCard = document.getElementById("questionCard");
-var quizQuestion = document.getElementById("questionText")
-var answerBtns = document.getElementById("answerBtn")
+var quizQuestion = document.getElementById("questionText");
+var answerBtns = document.getElementById("answerBtn");
+var timer = document.getElementsByClassName("timer");
 
 // invoke shuffled questions function
 let shuffledQuestions, currentQuestionIndex;
-
 
 // start button - add event listener
 quizStart = addEventListener("click", // directions hide and question card displays
@@ -21,10 +21,9 @@ function startQuiz() {
     setNextQuestion();
 });
 
-
 // at click of start button - timer begins
 // countdown function from Algorithms Folder in Module 4
-var countdown = function(num) {
+var countdownTimer = function(num) {
     for (var i = num; i > 0; i--) {
       console.log(i);
     }
