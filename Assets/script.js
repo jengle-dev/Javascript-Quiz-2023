@@ -34,21 +34,22 @@ var countdown = function (num) {
 // load question & // when answer chosen, the next question appears
 setNextQuestion = () => {
     resetState();
-    displayQuestion(shuffledQuestions[currentQuestionIndex]);
 
     // randomize questions from questions.js array
-    displayQuestion = (question) => {
+    displayQuestion = (questions) => {
         shuffledQuestions = questions.sort(() => Math.random() - .5);
         currentQuestionIndex = 0;
     }
 
-    document.set
-    
-    .innerText = questions[id].question;
+    // document.set
+    // .innerText = questions[id].question;
 }
+displayQuestion(shuffledQuestions[currentQuestionIndex]);
+
 
 resetState = () => {
     // needs to reset the page 
+    // make it so click event can happen again on the next question
 }
 
 
