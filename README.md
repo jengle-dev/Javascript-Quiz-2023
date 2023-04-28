@@ -23,7 +23,7 @@ This application does not have a future roadmap.
 ## Contributing
 I am open to collaboration for contributing to updates to this page. Please email me at j.engle.dev@gmail.com.
 
-There are no additional contributors to this project.
+Thank you to my course tutor Matthew C. with 2U/edX.
 
 ## License
 No License is used on this application.
