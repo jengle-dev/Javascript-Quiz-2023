@@ -18,26 +18,27 @@ var countdown = function (num) {
 };
 
 // load question & // when answer chosen, the next question appears
-setNextQuestion = () => {
-    resetState();
-
+const setNextQuestion = () => {
     // randomize questions from questions.js array
-    displayQuestion = (questions) => {
-        shuffledQuestions = questions.sort(() => Math.random() - 0.5);
-        currentQuestionIndex = 0;
-    };
-
-    // document.set
-    // .innerText = questions[id].question;
+    shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+    currentQuestionIndex = 0;
+    displayQuestion();
 };
-// displayQuestion(shuffledQuestions[currentQuestionIndex]);
 
 resetState = () => {
     // needs to reset the page
     // make it so click event can happen again on the next question
+    const questionElement = document.getElementById("question");
+    questionElement.innerText = "";
+
+    const answerElements = document.querySelectorAll(".answer");
+    answerElements.forEach((answerElement) => {
+        answerElement.innerText = "";
+        answerElement.removeEventListener("click", handleAnswerClick);
+    });
 };
 
-// display question number of total questions and/or progress bar
+// Future Dev: display question number of total questions and/or progress bar
 
 // answer options from buttons
 const answer1 = document.getElementById("btnOne");
@@ -47,6 +48,21 @@ const answer4 = document.getElementById("btnFour");
 
 // adding text of questions from questions array
 // questionText.innerText = questions[id].question;
+function displayQuestion() {
+    var question = shuffledQuestions[currentQuestionIndex];
+    quizQuestion.innerText = question.question;
+    answer1.innerText = question.answers[0].text;
+    answer2.innerText = question.answers[1].text;
+    answer3.innerText = question.answers[2].text;
+    answer4.innerText = question.answers[3].text;
+}
+
+// Handle the user's answer to the current question
+const handleAnswerClick = (event) => {
+    const selectedAnswerIndex = event.target.dataset.answerIndex;
+    const currentQuestion = shuffledQuestions[currentQuestionIndex];
+    const isCorrect = selectedAnswerIndex == currentQuestion.correctAnswerIndex;
+}
 
 // creating an array and passing the number, questions, options, and answers
 const questions = [
@@ -214,3 +230,4 @@ quizStart = addEventListener(
     }
 );
 
+quizStart();
