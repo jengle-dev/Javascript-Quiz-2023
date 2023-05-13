@@ -12,7 +12,7 @@ npm i bootstrap for sass files for css
 ## Usage
 
 ## Visuals
-* Deployed GitHub page: <a href="https://jengle-dev.github.io/Javascript-Quiz-Redo/" target="_blank">Javascript-Quiz-Redo</a>
+* Deployed GitHub page: <a href="https://jengle-dev.github.io/Javascript-Quiz-Redo/" target="_blank">Javascript-Quiz</a>
 
 ## Support
 If there are issues with the site, please reach out to me, Jennifer Engle, at j.engle.dev@gmail.com and reference the site's URL. Please provide any screenshots and behavior along with your browser information.
