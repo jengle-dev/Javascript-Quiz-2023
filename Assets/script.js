@@ -266,19 +266,28 @@ function renderQuestion(event) {
 // start button - add event listener
 // directions hide and question card displays
 
-const quizStart = document.getElementById("quizStart");
-quizStart.addEventListener(
-    "click",
-    function() {
-        console.log("Quiz started.");
-
-        document.getElementById("directions").style.display = "none";
-        document.getElementById("questionCard").style.display = "block";
-
-        renderQuestion();
-        setNextQuestion();
-        countdown();
-    })
-    ;
+function quizStart() {
+    // hide the main page and show the quiz card
+    mainPage.style.display = "none";
+    quizCard.style.display = "block";
+  
+    // reset the quiz state
+    resetState();
+  
+    // start the countdown timer
+    var remainingTime = 60; // 60 seconds
+    var countdownInterval = setInterval(function () {
+      remainingTime--;
+      timer[0].textContent = remainingTime;
+      if (remainingTime <= 0) {
+        clearInterval(countdownInterval);
+        quizEnd();
+      }
+    }, 1000);
+  
+    // set the next question
+    setNextQuestion();
+  }
+  
 
 quizStart();

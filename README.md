@@ -37,7 +37,8 @@ This project is in progress and a redo of a previous application attempt.
 * https://getbootstrap.com/docs/5.3/utilities/visibility/
 * https://codepen.io/WebDevSimplified/embed/xNvaaz?height=265&theme-id=default&default-tab=js,result
 * https://www.geeksforgeeks.org/how-to-create-a-simple-javascript-quiz/
-* https://www.w3schools.com/howto/howto_js_countdown.asp
 * https://github.com/ReindeerCode/Web-APIs-Code-Quiz/blob/master/JS/script.js
 * https://timmousk.com/blog/git-ignore-node-modules/
+* https://www.w3schools.com/howto/howto_js_countdown.asp
+* https://www.w3schools.com/jsref/met_win_clearinterval.asp
 
