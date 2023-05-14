@@ -1,5 +1,5 @@
 var mainPage = document.getElementById("mainLoad");
-var quizCard = document.getElementById("questionCard");
+// const quizCard = document.getElementById("quizCard");
 var quizQuestion = document.getElementById("questionText");
 var answerBtns = document.getElementById("answerBtn");
 var timer = document.getElementsByClassName("timer");
@@ -80,12 +80,20 @@ const answer4 = document.getElementById("btnFour");
 // adding text of questions from questions array
 // questionText.innerText = questions[id].question;
 function displayQuestion() {
-    var question = shuffledQuestions[currentQuestionIndex];
-    quizQuestion.innerText = question.question;
-    answer1.innerText = question.answers[0].text;
-    answer2.innerText = question.answers[1].text;
-    answer3.innerText = question.answers[2].text;
-    answer4.innerText = question.answers[3].text;
+    var currentQuestion = questions[currentQuestionIndex];
+    quizQuestion.textContent = currentQuestion.question;
+
+    currentQuestion.answers.forEach((answer, index) => {
+        const button = answerBtns.querySelector(`#btn${index + 1}`);
+        button.textContent = answer.text;
+        button.dataset.correct = answer.correct;
+      });
+    
+      // Reset the timer
+      timer.textContent = 0;
+    
+      // Show the question card
+      questionCard.style.display = "block";
 }
 
 // Handle the user's answer to the current question
@@ -117,47 +125,53 @@ function renderQuestion(event) {
     const questionTitle = questionCard.querySelector(".card-title");
     const questionText = questionCard.querySelector("#questionText");
     const answerBtns = questionCard.querySelector("#answerBtns");
-  
+
     // Get the current question and update the html card and buttons with its data
     const currentQuestion = questions[currentQuestionIndex];
     questionTitle.textContent = `Question ${currentQuestionIndex + 1}`;
     questionText.textContent = currentQuestion.question;
     currentQuestion.answers.forEach((answer, index) => {
-      const button = answerBtns.querySelector(`#btn${index + 1}`);
-      button.textContent = answer.text;
-      button.dataset.correct = answer.correct;
+        const button = answerBtns.querySelector(`#btn${index + 1}`);
+        button.textContent = answer.text;
+        button.dataset.correct = answer.correct;
     });
-  
+
     // Hide the start button and show the question card
     startBtn.classList.add("hide");
     questionCard.classList.remove("hide");
-  }
+}
 
 // start button - add event listener
 // directions hide and question card displays
 
 function quizStart() {
+    const quizCard = document.getElementById("quizCard");
     // hide the main page and show the quiz card
     mainPage.style.display = "none";
     quizCard.style.display = "block";
-  
+
     // reset the quiz state
     resetState();
-  
+    // since resetting quiz state, index begins at zero for questions
+    currentQuestionIndex = 0;
+
+    //start dispaying the questions
+    displayQuestion();
+
     // start the countdown timer
     var remainingTime = 60; // 60 seconds
     var countdownInterval = setInterval(function () {
-      remainingTime--;
-      timer[0].textContent = remainingTime;
-      if (remainingTime <= 0) {
-        clearInterval(countdownInterval);
-        quizEnd();
-      }
+        remainingTime--;
+        timer[0].textContent = remainingTime;
+        if (remainingTime <= 0) {
+            clearInterval(countdownInterval);
+            quizEnd();
+        }
     }, 1000);
-  
+
     // set the next question
     setNextQuestion();
-  }
-  
+}
+
 
 quizStart();
