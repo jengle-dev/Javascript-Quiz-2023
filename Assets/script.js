@@ -1,5 +1,4 @@
-var mainPage = document.getElementById("mainLoad");
-// const quizCard = document.getElementById("quizCard");
+const mainPage = document.getElementById("mainLoad");
 var quizQuestion = document.getElementById("questionText");
 var answerBtns = document.getElementById("answerBtn");
 var timer = document.getElementsByClassName("timer");
@@ -27,7 +26,7 @@ const setNextQuestion = () => {
 resetState = () => {
     // needs to reset the page
     // make it so click event can happen again on the next question
-    const questionElement = document.getElementById("question");
+    const questionElement = document.getElementById("questionText");
     questionElement.innerText = "";
 
     const answerElements = document.querySelectorAll(".answer");
@@ -36,40 +35,6 @@ resetState = () => {
         answerElement.removeEventListener("click", handleAnswerClick);
     });
 };
-
-//Future Dev: display question number of total questions and/or progress bar - This is not working currently
-// function ProgressBar({ current, total }) {
-//     const percentage = (current / total) * 100;
-
-//     return (
-//       <div className="progress-bar">
-//         <div
-//           className="progress-bar__fill"
-//           style={{ width: `${percentage}%` }}
-//         />
-//       </div>
-//     );
-//   }
-
-// function Quiz() {
-//     const { questions, currentQuestionIndex, score } = state;
-//     const currentQuestion = questions[currentQuestionIndex];
-
-//     return (
-//         <div className="quiz">
-//             {/* <ProgressBar current={currentQuestionIndex + 1} total={questions.length} /> */}
-//             <div className="question">{currentQuestion.question}</div>
-//             <Answers
-//                 answers={currentQuestion.answers}
-//                 selectedAnswer={state.selectedAnswer}
-//                 handleAnswerClick={handleAnswerClick}
-//                 isCorrect={state.isCorrect}
-//             />
-//             <div className="score">Score: {score}</div>
-//         </div>
-//     );
-// }
-
 
 // answer options from buttons
 const answer1 = document.getElementById("btnOne");
@@ -81,19 +46,19 @@ const answer4 = document.getElementById("btnFour");
 // questionText.innerText = questions[id].question;
 function displayQuestion() {
     var currentQuestion = questions[currentQuestionIndex];
-    quizQuestion.textContent = currentQuestion.question;
+    quizQuestion.textContent = currentQuestion.currentQuestion;
 
     currentQuestion.answers.forEach((answer, index) => {
         const button = answerBtns.querySelector(`#btn${index + 1}`);
         button.textContent = answer.text;
         button.dataset.correct = answer.correct;
-      });
-    
-      // Reset the timer
-      timer.textContent = 0;
-    
-      // Show the question card
-      questionCard.style.display = "block";
+    });
+
+    // Reset the timer
+    timer.textContent = 0;
+
+    // Show the question card
+    questionCard.style.display = "block";
 }
 
 // Handle the user's answer to the current question
@@ -141,14 +106,24 @@ function renderQuestion(event) {
     questionCard.classList.remove("hide");
 }
 
+
+window.onload = function () {
+    quizStart();
+};
 // start button - add event listener
 // directions hide and question card displays
 
 function quizStart() {
     const quizCard = document.getElementById("quizCard");
     // hide the main page and show the quiz card
-    mainPage.style.display = "none";
-    quizCard.style.display = "block";
+    if (!quizCard) {
+        console.error("quizCard element not found");
+        return;
+      }
+      // hide mainLoad and show quizCard
+      const mainLoad = document.getElementById("mainLoad");
+      mainLoad.classList.add("hide");
+      quizCard.classList.remove("hide");
 
     // reset the quiz state
     resetState();
@@ -173,5 +148,3 @@ function quizStart() {
     setNextQuestion();
 }
 
-
-quizStart();
