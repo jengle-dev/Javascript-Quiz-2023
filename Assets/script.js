@@ -1,5 +1,4 @@
 var mainPage = document.getElementById("mainLoad");
-var quizStart = document.getElementById("startBtn");
 var quizCard = document.getElementById("questionCard");
 var quizQuestion = document.getElementById("questionText");
 var answerBtns = document.getElementById("answerBtn");
@@ -38,7 +37,39 @@ resetState = () => {
     });
 };
 
-// Future Dev: display question number of total questions and/or progress bar
+//Future Dev: display question number of total questions and/or progress bar - This is not working currently
+// function ProgressBar({ current, total }) {
+//     const percentage = (current / total) * 100;
+
+//     return (
+//       <div className="progress-bar">
+//         <div
+//           className="progress-bar__fill"
+//           style={{ width: `${percentage}%` }}
+//         />
+//       </div>
+//     );
+//   }
+
+// function Quiz() {
+//     const { questions, currentQuestionIndex, score } = state;
+//     const currentQuestion = questions[currentQuestionIndex];
+
+//     return (
+//         <div className="quiz">
+//             {/* <ProgressBar current={currentQuestionIndex + 1} total={questions.length} /> */}
+//             <div className="question">{currentQuestion.question}</div>
+//             <Answers
+//                 answers={currentQuestion.answers}
+//                 selectedAnswer={state.selectedAnswer}
+//                 handleAnswerClick={handleAnswerClick}
+//                 isCorrect={state.isCorrect}
+//             />
+//             <div className="score">Score: {score}</div>
+//         </div>
+//     );
+// }
+
 
 // answer options from buttons
 const answer1 = document.getElementById("btnOne");
@@ -59,9 +90,25 @@ function displayQuestion() {
 
 // Handle the user's answer to the current question
 const handleAnswerClick = (event) => {
-    const selectedAnswerIndex = event.target.dataset.answerIndex;
-    const currentQuestion = shuffledQuestions[currentQuestionIndex];
-    const isCorrect = selectedAnswerIndex == currentQuestion.correctAnswerIndex;
+    // get answer from DOM
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+
+    // check that an answer was selected at all
+    if (selectedAnswer) {
+        const selectedValue = selectedAnswer.value;
+        // is the selectedAnswer/selectedValue the correct answer?
+        if (selectedValue === correctAnswer) {
+            score++;
+            showMessage("Correct!");
+        } else {
+            showMessage("Sorry, that's incorrect.");
+        }
+        // no answer selected, nothing really happens: Future Dev to prompt after 30 sec.
+        //     selectedAnswer.checked = false;
+        //   } else {
+        //     showMessage("Please select an answer.");
+
+    }
 }
 
 // creating an array and passing the number, questions, options, and answers
@@ -217,17 +264,21 @@ function renderQuestion(event) {
 };
 
 // start button - add event listener
-quizStart = addEventListener(
-    "click", // directions hide and question card displays
-    function startQuiz() {
+// directions hide and question card displays
+
+const quizStart = document.getElementById("quizStart");
+quizStart.addEventListener(
+    "click",
+    function() {
         console.log("Quiz started.");
 
-        mainPage.classList.add("hide");
-        quizCard.classList.remove("hide");
+        document.getElementById("directions").style.display = "none";
+        document.getElementById("questionCard").style.display = "block";
+
         renderQuestion();
         setNextQuestion();
         countdown();
-    }
-);
+    })
+    ;
 
 quizStart();
