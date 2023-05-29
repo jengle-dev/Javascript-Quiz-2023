@@ -29,7 +29,7 @@ Thank you to my course tutor Matthew C. with 2U/edX.
 No License is used on this application.
 
 ## Project status
-This project is in progress and a redo of a previous application attempt.
+This project is closed as incomplete. Repo archived 5/29/2023
 
 ## References
 * https://www.w3schools.com/css/default.asp
